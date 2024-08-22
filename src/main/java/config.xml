@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+		<!-- 1st way set value -->
+	<!-- <bean class="com.springcore.Student" name="Student1">
+		<property name="studentId">
+			<value>3338</value>
+		</property>
+		<property name="studentName">
+			<value>Swyam</value>
+		</property>
+		<property name="studentAddress">
+			<value>Kolhapur</value>
+		</property>
+		</bean>
+ -->
+
+
+		<!--2nd way- inject value as use a attribute inside property tag -->
+		
+		<!-- <bean class="com.springcore.Student" name="Student2"> 
+		<property name="studentId" value="3339" /> 
+		<property name="studentName" value="Shivam" /> 
+		<property name="studentAddress" value="Kolhapur" /> 
+		</bean>
+		
+		 <bean class="com.springcore.Student" name="Student3"> 
+		 <property name="studentId" value="3337" /> 
+		 <property name="studentName" value="Shubham" /> 
+		 <property name="studentAddress" value="Kolhapur" /> 
+		 </bean> -->
+
+		<!-- 3rd way-use p schema and set value -->
+		<!-- add this line in your Schema - ( xmlns:p="http://www.springframework.org/schema/p" ) -->
+		<bean class="com.springcore.Student" name="Student4" p:studentId="778" p:studentName="Yash" p:studentAddress="Pune"></bean>
+		<bean class="com.springcore.Student" name="Student5" p:studentId="774" p:studentName="Yodha" p:studentAddress="Pune"></bean>
+
+</beans>

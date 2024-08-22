@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- we set the value with the help of setter injection that time we use 
+		property tag -->
+
+	<!-- but this time we use constructor injection with the help of <contructor-args> 
+		tag -->
+
+
+	<!-- 1stway -->
+	<!-- <bean class="com.construrctorinjection.Person" name="Person1"> <constructor-arg> 
+		<value>52</value> </constructor-arg> <constructor-arg> <value>Utkarsh</value> 
+		</constructor-arg> </bean> -->
+
+
+	<!-- 2nd way that time we use value as a attribute inside constructor tag -->
+	<!-- inject refrence type value -->
+	<!-- <bean class="com.construrctorinjection.Certificate" name="Cer1"> <constructor-arg 
+		value="MySQl" /> </bean> <bean class="com.construrctorinjection.Person" name="Person1"> 
+		<constructor-arg value="57" type="int" /> <constructor-arg value="Uday" /> 
+		<constructor-arg ref="Cer1" /> </bean> -->
+
+
+	<!-- using c schema inject value in properties -->
+	<!-- adding this line in Schema ( xmlns:c="http://www.springframework.org/schema/c" ) -->
+	<!-- <bean class="com.construrctorinjection.Certificate" name="Cer1"
+		c:name="Python"></bean>
+
+	<bean class="com.construrctorinjection.Person" name="Person1"
+		 c:personId="421"  c:name="Udhvek" c:ref=""></bean>
+ -->
+ 	
+ 	<!-- constructor ambiguity -->
+ 	<!-- <bean class="com.construrctorinjection.Addition" name="Addition1">
+ 	<constructor-arg value="20"></constructor-arg>
+ 	<constructor-arg value="20"></constructor-arg> -->
+ 	
+ 	<!-- solve this constructor ambiguity problem simple declare data type with respective feild -->
+ 	<!-- <bean class="com.construrctorinjection.Addition" name="Addition1">
+ 	<constructor-arg value="20" type="double"></constructor-arg>
+ 	<constructor-arg value="20" type="double"></constructor-arg>
+ 	 -->
+ 	<!-- you change the oreders feild (index start 0,1,2....) -->
+ 	<bean class="com.construrctorinjection.Addition" name="Addition1">
+ 	<constructor-arg value="70" type="double" index="1"></constructor-arg>
+ 	<constructor-arg value="20" type="double" index="0"></constructor-arg>
+ 	</bean>
+</beans>

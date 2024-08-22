@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- that time i am not manually inject Address obj in emp 
+	that time i am use @autowierd annotation and this annotation automatic inject address obj in emp
+	using @Autowired annotation using in xml three types
+	1.byType, 
+	2.byName and 
+	3.constructor 
+	but reminder one thing your refence bean(address) name and your feild veriable(address) name must be same-->
+	
+	<!-- <bean class=" com.springcore.autowiring.withxml.Address"
+		name="address">
+		<property name="state" value="Maharashtra" />
+		<property name="city" value="Kolhapur" />
+	</bean> -->
+	
+	<bean class=" com.springcore.autowiring.withxml.Address"
+		name="address1">
+		<property name="state" value="Karnatanka" />
+		<property name="city" value="Bengleru" />
+	</bean>
+	
+	<!-- <bean class=" com.springcore.autowiring.withxml.Address"
+		name="address">
+		<property name="state" value="Maharashtra" />
+		<property name="city" value="pune" />
+	</bean> -->
+	
+	<!-- 1.byName cheak your feilds name and your refrence name must be same or not -->
+	<!-- <bean class=" com.springcore.autowiring.withxml.Emp" name="Emp1" autowire="byName"/> -->
+	
+	
+	<!-- 2.ByType cheak your feilds type and of that name bean present in configuration file  -->
+	<!-- <bean class=" com.springcore.autowiring.withxml.Emp" name="Emp1" autowire="byType"/> -->
+	
+	<!-- byName and byType they both call setter mehod and inject obj -->
+ 	
+ 	<!-- but there can be many of the same type bean 
+ 	for ex- -->
+ 	<!-- <bean class=" com.springcore.autowiring.withxml.Emp" name="Emp1" autowire="byType"/>
+ 		<bean class=" com.springcore.autowiring.withxml.Emp" name="Emp2" autowire="byType"/>
+ 		<bean class=" com.springcore.autowiring.withxml.Emp" name="Emp3" autowire="byType"/> -->
+ 	<!-- which type call so this problem Overcome using constructor type
+ 	 -->
+ 	 
+ 	<!-- 3.constructor cheak your feild name and find same bean name both match then this bean inject -->
+ 	<bean class=" com.springcore.autowiring.withxml.Emp" name="Emp1" autowire="constructor"/>
+ 	<bean class=" com.springcore.autowiring.withxml.Emp" name="Emp2" autowire="constructor"/>
+	
+	
+</beans>

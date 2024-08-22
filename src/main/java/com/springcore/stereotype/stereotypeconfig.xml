@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<!-- without bean declare create object  with the help of @component annotation
+	following steps
+	1.use simple tag in our configuration file <context:component-scan base-package="com.springcore.stereotype"/> 
+	and simple pass your class packge name as argument
+	this tag scan your package & sub package in all classes
+	2.go to our class and use @component annotation in class on the top
+		@Component
+		public class Student
+	3.use @value annotation and set the value of feilds	
+	public class Student {
+	@Value("Rajput")
+	private String studentName;
+	
+	@Value("Rajasthan")
+	private String city; 
+	
+	4.but how to use @value annotation with collection type feilds  for ex()
+	following steps
+	1.add util schema in your configuration file
+	2.use <util:list list-class="java.util.ArrayList" id="area"> tag and set the all value
+	3.and this bean id pass inside @value() annotation
+	@Value("#{area}")
+	private List<String> address;-->
+	
+	<util:list list-class="java.util.ArrayList" id="area">
+	<value>Kolhapur</value>
+	<value>Pune</value>
+	<value>Mumbai</value>
+	<value>Bengalore</value>
+	</util:list>
+	
+	<context:component-scan base-package="com.springcore.stereotype"/>
+	
+	<!--spring bean scope prototype -->
+	<bean class="com.springcore.stereotype.Teacher" name="Teacher1" scope="prototype">
+	<property name="name" value="Deshna"/>
+	<property name="age" value="23" />
+	</bean>
+</beans>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="com.springcore.collections.Employee" name="Employee1">
+		<property name="name" value="Radhe" />
+
+
+		<!-- <property name="phones">
+			<value>74894165</value>  	your felis List type but you pass only one value no Problem use list tag and set value. 
+		</property>	 -->				<!--  you also  remove list tag no problem and set the value spring is intaligent person -->  
+		
+		<property name="phones">
+			<list>
+				<value>74894165</value>
+				<value>32468940</value>
+				<value>95841237</value>
+				<null/>
+			</list>
+		</property>
+
+		<property name="address">
+			<set>
+				<value>Pune</value>
+				<value>Mumbai</value>
+				<value>Bengalure</value>
+			</set>
+		</property>
+
+		<property name="course">
+			<map>
+				<entry key="java" value="2 months" />
+				<entry key="python" value="3 months" />
+				<entry key="c++" value="4 months" />
+			</map>
+		</property>
+
+	</bean>
+</beans>

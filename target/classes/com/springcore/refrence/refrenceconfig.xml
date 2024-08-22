@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="com.springcore.refrence.B" name="refB">
+		<property name="y" value="88" />
+	</bean>
+
+	<!-- <bean class="com.springcore.refrence.A" name="refA"> <property name="x" 
+		value="44"/> <property name="obj"> <ref bean="refB"/> i am use ref as element 
+		</property> -->
+
+
+	 <!-- but that time i am use ref as a attribute inside property tag -->
+	<!-- <bean class="com.springcore.refrence.A" name="refA">
+		<property name="x" value="44" />
+		<property name="obj" ref="refB" />
+	</bean>  -->
+	
+	
+	<!-- we use p schema and set value -->
+	<bean class="com.springcore.refrence.A" name="refA" p:x="43" p:obj-ref="refB"/>
+	
+</beans>
